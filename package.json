@@ -19,7 +19,8 @@
     "express": "^4.16.3",
     "lodash": "^4.17.10",
     "mongoose": "^5.2.8",
-    "mongoose-url-slugs": "^1.0.2"
+    "mongoose-url-slugs": "^1.0.2",
+    "object.fromentries": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

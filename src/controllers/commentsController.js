@@ -12,13 +12,13 @@ export default {
     async findAll(req, res, next) {
         const comments = await Comment.find().sort({ createdAt: 'desc' });
 
-        if (!comment) return next();
+        if (!comments) return next();
 
         return res.status(200).send({ comments });
     },
 
     async create(req, res, next) {
-        const comment = await new Comment.create({
+        const comment = await new Comment({
             comment: req.body.comment,
             author: {
                 username: req.body.author.username
@@ -27,7 +27,9 @@ export default {
                 name: req.body.movie.name,
                 _id: req.body.movie._id
             }
-        });
+        }).save();
+
+        console.log(comment);
 
         if (!comment) return next();
 

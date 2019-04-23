@@ -2,40 +2,40 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const ProjectSchema = Schema({
-    Title: {
+    title: {
         type: String,
         required: true
     },
-    Year: {
+    year: {
         type: String,
         required: true
     },
-    Rated: String,
-    Released: String,
-    Runtime: String,
-    Genre: String,
-    Director: String,
-    Writer: String,
-    Actors: String,
-    Plot: String,
-    Language: String,
-    Country: String,
-    Awards: String,
-    Poster: String,
-    Ratings: [{
+    rated: String,
+    released: String,
+    runtime: String,
+    genre: String,
+    director: String,
+    writer: String,
+    actors: String,
+    plot: String,
+    language: String,
+    country: String,
+    awards: String,
+    poster: String,
+    ratings: [{
         Source: String,
         Value: String
     }],
-    Metascore: String,
-    imdbRating: String,
-    imdbVotes: String,
-    imdbID: String,
-    Type: String,
-    DVD: String,
-    BoxOffice: String,
-    Production: String,
-    Website: String,
-    Comments: [{
+    metascore: String,
+    imdbrating: String,
+    imdbvotes: String,
+    imdbid: String,
+    type: String,
+    dvd: String,
+    boxoffice: String,
+    production: String,
+    website: String,
+    comments: [{
         _id: Schema.Types.ObjectId,
         author: {
             username: String

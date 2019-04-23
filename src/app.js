@@ -11,6 +11,7 @@ import dbConfig from './config/database';
 
 // routes
 import comments from './routes/comments';
+import movies from './routes/movies';
 
 // create app
 const app = express();
@@ -27,6 +28,7 @@ app.use(bodyParser.json()); // application/json headers
 
 // use routes
 app.use('/comments', comments());
+app.use('/movies', movies());
 
 // let's play!
 app.listen(config.server.port, () => {

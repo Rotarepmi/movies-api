@@ -15,6 +15,14 @@ import comments from './routes/comments';
 // create app
 const app = express();
 
+// connect to mongoDB
+mongoose.connect(dbConfig.mongoUrl, { useNewUrlParser: true });
+mongoose.Promise = global.Promise;
+mongoose.connection.on('error', (err) => {
+    console.log('Could not connect to the database. Exiting now...');
+    process.exit();
+});
+
 app.use(bodyParser.json()); // application/json headers
 
 // use routes

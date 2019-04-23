@@ -5,6 +5,10 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 
+// config
+import config from './config/config';
+import dbConfig from './config/database';
+
 // create app
 const app = express();
 

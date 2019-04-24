@@ -29,8 +29,6 @@ export default {
             }
         }).save();
 
-        console.log(comment);
-
         if (!comment) return next();
 
         return res.status(201).send({ comment, message: 'Comment successfully created.' });

@@ -1,21 +1,25 @@
 import axios from 'axios';
 import fromEntries from 'object.fromentries';
 import Movie from '../models/movie';
+import Comment from '../models/comment';
 import omdb from '../config/omdb';
 
 export default {
     async findOne(req, res, next) {
         const movie = await Movie.findOne({ _id: req.params.id });
+        const comments = await Comment.find({ 'movie._id': req.params.id });
 
         if (!movie) return next();
-        
+
+        if (comments.length) movie.comments = comments;
+
         return res.status(200).send({ movie });
     },
 
     async findAll(req, res, next) {
         const movies = await Movie.find().sort({ name: 'asc' });
 
-        if(!movies) return next();
+        if (!movies) return next();
 
         return res.status(200).send({ movies });
     },

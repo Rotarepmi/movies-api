@@ -10,7 +10,7 @@ This API offers CRUD operations on 2 endpoints: /movies && /comments. It uses om
 
 ## Getting Started
 
-To run the project clone and install the repository. You will have to set up and connect your working MongoDB instance and get api key for http://www.omdbapi.com/. Store your db password and omdbapi key in .env file.
+To run the project clone and install the repository. You will have to set up and connect your working MongoDB instance and get api key for http://www.omdbapi.com/. Store your database password (variable MONGO - required on production) and omdbapi key (variable OMDB - required on dev and prod) in .env file.
 
 ## Running the tests
 

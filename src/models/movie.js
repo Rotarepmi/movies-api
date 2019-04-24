@@ -38,6 +38,8 @@ const ProjectSchema = Schema({
             username: String
         },
         comment: String,
+        createdAt: Schema.Types.Date,
+        updatedAt: Schema.Types.Date
     }]
 }, {
         timestamps: true

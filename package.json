@@ -11,7 +11,7 @@
     "test": "nodemon --exec 'mocha -R min' --require @babel/register --require @babel/polyfill"
   },
   "author": "Jakub Mandra",
-  "license": "ISC",
+  "license": "MIT",
   "engines": {
     "node": "11.13.0"
   },

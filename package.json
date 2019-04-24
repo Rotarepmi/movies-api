@@ -5,14 +5,15 @@
   "main": "app.js",
   "scripts": {
     "build": "rimraf ./dist && babel ./src -d ./dist",
-    "prestart": "yarn run -s build",
+    "prestart": "npm run -s build",
     "start": "NODE_ENV=production PORT=8080 node dist/app.js",
     "dev": "NODE_ENV=development PORT=8080 nodemon -w ./src --exec \"babel-node ./src/app.js\"",
-    "test": "mocha"
+    "test": "nodemon --exec 'mocha -R min' --require @babel/register --require @babel/polyfill"
   },
   "author": "Jakub Mandra",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.4.3",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
@@ -23,12 +24,12 @@
     "object.fromentries": "^2.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
     "rimraf": "^2.6.2"

@@ -6,10 +6,7 @@ const ProjectSchema = Schema({
         type: String,
         required: true
     },
-    year: {
-        type: String,
-        required: true
-    },
+    year: String,
     rated: String,
     released: String,
     runtime: String,

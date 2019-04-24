@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rimraf ./dist && babel ./src -d ./dist",
     "prestart": "npm run -s build",
-    "start": "NODE_ENV=production PORT=8080 node dist/app.js",
+    "start": "node dist/app.js",
     "dev": "NODE_ENV=development PORT=8080 nodemon -w ./src --exec \"babel-node ./src/app.js\"",
     "test": "nodemon --exec 'mocha -R min' --require @babel/register --require @babel/polyfill"
   },

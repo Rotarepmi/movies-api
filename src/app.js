@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config({ path: '.env' });
 
 import express from 'express';
+import compression from 'compression';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 
@@ -26,6 +27,7 @@ mongoose.connection.on('error', (err) => {
     process.exit();
 });
 
+app.use(compression());
 app.use(bodyParser.json()); // application/json headers
 
 // use routes

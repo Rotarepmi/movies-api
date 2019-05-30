@@ -7,6 +7,7 @@ import express from 'express';
 import compression from 'compression';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 // config
 import config from './config/config';
@@ -29,6 +30,7 @@ mongoose.connection.on('error', (err) => {
 
 app.use(compression());
 app.use(bodyParser.json()); // application/json headers
+app.use(cors());
 
 // use routes
 app.use('/comments', comments());
